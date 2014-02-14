@@ -81,7 +81,8 @@ WARNING
 
         @cache.load public_assets_folder
         @cache.load default_assets_cache
-
+        
+        `rm -rf #{default_assets_cache}/*`
         precompile.invoke(env: rake_env)
 
         if precompile.success?
